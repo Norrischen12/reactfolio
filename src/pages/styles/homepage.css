@@ -78,6 +78,12 @@
 	padding-top: 40px;
 }
 
+.homepage-projects-see-more {
+	opacity: 0.7;
+	text-align: right;
+	margin-top: 10px;
+}
+
 .homepage-articles {
 	flex-basis: 900px;
 	padding-top: 30px;

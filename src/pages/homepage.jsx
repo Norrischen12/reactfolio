@@ -15,7 +15,7 @@ import Footer from "../components/common/footer";
 import NavBar from "../components/common/navBar";
 import Article from "../components/homepage/article";
 import Works from "../components/homepage/works";
-import AllProjects from "../components/projects/allProjects";
+import SixProjects from "../components/projects/homePageProjects";
 
 import INFO from "../data/user";
 import SEO from "../data/seo";
@@ -167,7 +167,9 @@ const Homepage = () => {
 						</div>
 
 						<div className="homepage-projects">
-							<AllProjects />
+							<h1>Projects</h1>
+							<SixProjects />
+							<a href="/projects" className="homepage-projects-see-more">See More...</a>
 						</div>
 
 						<div className="homepage-after-title">

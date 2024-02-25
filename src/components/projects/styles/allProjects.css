@@ -15,6 +15,13 @@
 	overflow: hidden;
 }
 
+.last-project {
+	opacity: 0.5;
+}
+.last-project:hover {
+	opacity: 1;
+}
+
 @media (max-width: 600px) {
 	.all-projects-project {
 		width: calc(100% / 2);

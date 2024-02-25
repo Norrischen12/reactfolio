@@ -46,6 +46,9 @@
 .project-description {
 	color: var(--secondary-color);
 }
+.project-technologies {
+	
+}
 
 .project-link {
 	display: flex;

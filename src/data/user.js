@@ -16,9 +16,9 @@ const INFO = {
 	},
 
 	homepage: {
-		title: "Full-stack web and mobile app developer, and amateur astronaut.",
+		title: "Web Developer, Researcher, Problem Solver",
 		description:
-			"I am a backend developer with expertise in Node.js. I have experience in building scalable, secure and reliable web applications using various frameworks and technologies. I enjoy solving complex problems and learning new skills. I am passionate about creating high-quality code that follows best practices and industry standards. I am always looking for new challenges and opportunities to grow as a developer.",
+			"Hello! I am a twenty five year old Software E",
 	},
 
 	about: {
@@ -35,46 +35,66 @@ const INFO = {
 
 	projects: [
 		{
-			title: "Project 1",
+			title: "Critical Healthcare Allocation in Sierra Leone",
 			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
+				"We tackle the dilema of plunging age expectancy of Sierra Leone with providing ",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
-			linkText: "View Project",
+			technologies:"#Flask #HTML #CSS #Web Scraping #DHIS API #Reinforement Learning",
+			linkText: "View Paper",
 			link: "https://github.com",
 		},
 
 		{
-			title: "Project 2",
+			title: "MCIT-Connect",
 			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
+				"We built a full cycle software app to connect like-minded people in the University of Pennsylvania",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/python/python.png",
+			technologies:"#React #Figma #Fullstack #",
 			linkText: "View Project",
-			link: "https://github.com",
+			link: "https://mcit-connect.com",
 		},
-
 		{
-			title: "Project 3",
+			title: "Pennstagram",
 			description:
 				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
+			technologies:"#React",
 			linkText: "View Project",
 			link: "https://github.com",
 		},
-
 		{
-			title: "Project 4",
+			title: "Organisms",
 			description:
 				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
+			technologies:"#React",
 			linkText: "View Project",
 			link: "https://github.com",
 		},
-
 		{
-			title: "Project 5",
+			title: "Pipe Shell",
+			description:
+				"I built a mini UNIX Shell to perform automated low level system tasks with ease. This program can simplify complex workflows into a streamlined operation by integrating parallel programming with threads",
+			logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/240px-ISO_C%2B%2B_Logo.svg.png",
+			technologies:"#Linux #",
+			linkText: "View Project",
+			link: "https://github.com",
+		},
+		{
+			title: "Multi-Threaded HTTP Server",
+			description:
+				"",
+			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
+			technologies:"#React",
+			linkText: "View Project",
+			link: "https://github.com",
+		},
+		{
+			title: "Project 7",
 			description:
 				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
+			technologies:"#React",
 			linkText: "View Project",
 			link: "https://github.com",
 		},
