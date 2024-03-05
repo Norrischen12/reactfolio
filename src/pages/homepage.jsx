@@ -1,32 +1,38 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
+import Typewriter from "typewriter-effect";
 
 import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-	faTwitter,
 	faGithub,
-	faStackOverflow,
 	faInstagram,
+	faLinkedin
 } from "@fortawesome/free-brands-svg-icons";
 
 import Logo from "../components/common/logo";
 import Footer from "../components/common/footer";
 import NavBar from "../components/common/navBar";
-import Article from "../components/homepage/article";
+import Experience from "../components/homepage/experience";
 import Works from "../components/homepage/works";
 import SixProjects from "../components/projects/homePageProjects";
+import Email from "../components/homepage/emailComponent";
+
 
 import INFO from "../data/user";
 import SEO from "../data/seo";
 import myArticles from "../data/articles";
 
 import "./styles/homepage.css";
+import { TypewriterClass } from "typewriter-effect";
 
 const Homepage = () => {
 	const [stayLogo, setStayLogo] = useState(false);
 	const [logoSize, setLogoSize] = useState(80);
 	const [oldLogoSize, setOldLogoSize] = useState(80);
+	const [isVisible, setIsVisible] = useState(false);
+
+
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -52,9 +58,31 @@ const Homepage = () => {
 			}
 		};
 
+		
+
 		window.addEventListener("scroll", handleScroll);
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, [logoSize, oldLogoSize]);
+
+	useEffect(() => {
+		const handleScroll = () => {
+		  const experienceElement = document.querySelector(".experience");
+		  if (experienceElement) {
+			const topPosition = experienceElement.getBoundingClientRect().top;
+			const bottomPosition = experienceElement.getBoundingClientRect().bottom;
+			const windowHeight = window.innerHeight;
+	
+			if (topPosition < windowHeight && bottomPosition > 0) {
+			  setIsVisible(true);
+			}
+		  }
+		};
+	
+		window.addEventListener("scroll", handleScroll);
+		return () => {
+		  window.removeEventListener("scroll", handleScroll);
+		};
+	  }, []);
 
 	const currentSEO = SEO.find((item) => item.page === "home");
 
@@ -68,6 +96,8 @@ const Homepage = () => {
 		boxShadow: stayLogo ? "0px 4px 10px rgba(0, 0, 0, 0.25)" : "none",
 	};
 
+	const homepageTitle = INFO.homepage.title;
+
 	return (
 		<React.Fragment>
 			<Helmet>
@@ -78,7 +108,6 @@ const Homepage = () => {
 					content={currentSEO.keywords.join(", ")}
 				/>
 			</Helmet>
-
 			<div className="page-content">
 				<NavBar active="home" />
 				<div className="content-wrapper">
@@ -92,7 +121,17 @@ const Homepage = () => {
 						<div className="homepage-first-area">
 							<div className="homepage-first-area-left-side">
 								<div className="title homepage-title">
-									{INFO.homepage.title}
+									
+									<Typewriter
+										options={{
+											delay: 50,
+									  	}}
+										onInit={(typewriter) => {
+										typewriter.typeString(homepageTitle)
+										.start()
+									  }}></Typewriter>
+									
+									
 								</div>
 
 								<div className="subtitle homepage-subtitle">
@@ -112,18 +151,9 @@ const Homepage = () => {
 								</div>
 							</div>
 						</div>
-
+						
 						<div className="homepage-socials">
-							<a
-								href={INFO.socials.twitter}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faTwitter}
-									className="homepage-social-icon"
-								/>
-							</a>
+							
 							<a
 								href={INFO.socials.github}
 								target="_blank"
@@ -135,12 +165,12 @@ const Homepage = () => {
 								/>
 							</a>
 							<a
-								href={INFO.socials.stackoverflow}
+								href={INFO.socials.linkedin}
 								target="_blank"
 								rel="noreferrer"
 							>
 								<FontAwesomeIcon
-									icon={faStackOverflow}
+									icon={faLinkedin}
 									className="homepage-social-icon"
 								/>
 							</a>
@@ -169,29 +199,26 @@ const Homepage = () => {
 						<div className="homepage-projects">
 							<h1>Projects</h1>
 							<SixProjects />
-							<a href="/projects" className="homepage-projects-see-more">See More...</a>
+							<div className="homepage-projects-see-more">
+								<a href="/projects">See More...</a>
+							</div>
 						</div>
-
+						<div className="experience">
+							{isVisible && (
+								<div className="fade-in">
+									<Experience></Experience>
+								</div>
+								)}
+						</div>
+						
 						<div className="homepage-after-title">
 							<div className="homepage-articles">
-								{myArticles.map((article, index) => (
-									<div
-										className="homepage-article"
-										key={(index + 1).toString()}
-									>
-										<Article
-											key={(index + 1).toString()}
-											date={article().date}
-											title={article().title}
-											description={article().description}
-											link={"/article/" + (index + 1)}
-										/>
-									</div>
-								))}
+								<Email></Email>
 							</div>
 
 							<div className="homepage-works">
 								<Works />
+							
 							</div>
 						</div>
 

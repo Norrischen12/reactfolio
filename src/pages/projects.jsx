@@ -14,6 +14,15 @@ import "./styles/projects.css";
 const Projects = () => {
 	useEffect(() => {
 		window.scrollTo(0, 0);
+
+		document.getElementById('projectsTitle').classList.add('fade');
+		document.getElementById('projectsSubtitle').classList.add('fade');
+
+		setTimeout(() => {
+			document.querySelector('.projects-list').classList.add('fade');
+
+		  }, 500);
+
 	}, []);
 
 	const currentSEO = SEO.find((item) => item.page === "projects");
@@ -38,12 +47,12 @@ const Projects = () => {
 						</div>
 					</div>
 					<div className="projects-container">
-						<div className="title projects-title">
+						<div className="title projects-title" id="projectsTitle">
 							Things I’ve made trying to put my dent in the
 							universe.
 						</div>
 
-						<div className="subtitle projects-subtitle">
+						<div className="subtitle projects-subtitle" id="projectsSubtitle">
 							I've worked on a variety of projects over the years
 							and I'm proud of the progress I've made. Many of
 							these projects are open-source and available for

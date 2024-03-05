@@ -14,10 +14,20 @@ import "./styles/about.css";
 const About = () => {
 	useEffect(() => {
 		window.scrollTo(0, 0);
-	}, []);
+		// Add fade-in class to title after 1 second
+		document.querySelector('.about-title').classList.add('fade');
+		
+		// Add fade-in class to description and image after 2 seconds
+		setTimeout(() => {
+		  document.querySelector('.about-subtitle').classList.add('fade');
+		  document.querySelector('.about-subtitle2').classList.add('fade');
+		  document.querySelector('.about-image-container').classList.add('fade');
+		}, 500);
+	  }, []);
+
 
 	const currentSEO = SEO.find((item) => item.page === "about");
-
+	const title = INFO.about.title;
 	return (
 		<React.Fragment>
 			<Helmet>
@@ -42,20 +52,23 @@ const About = () => {
 						<div className="about-main">
 							<div className="about-right-side">
 								<div className="title about-title">
-									{INFO.about.title}
+									{title}
 								</div>
 
-								<div className="subtitle about-subtitle">
+								<p className="subtitle about-subtitle">
 									{INFO.about.description}
-								</div>
+								</p>
+								<p className="subtitle about-subtitle2">
+									{INFO.about.description2}
+								</p>
 							</div>
 
 							<div className="about-left-side">
 								<div className="about-image-container">
 									<div className="about-image-wrapper">
 										<img
-											src="about.jpg"
-											alt="about"
+											src="Teaching.jpg"
+											alt="Teaching Picture"
 											className="about-image"
 										/>
 									</div>

@@ -12,7 +12,9 @@
 	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 	top: 4vh;
 }
-
+.articles-title {
+	padding: 20px;
+}
 .articles-main-container {
 	display: flex;
 	flex-direction: column;
@@ -25,7 +27,17 @@
 	display: flex;
 	flex-direction: column;
 }
-
+.articles-img-container {
+	display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.articles-img-container img {
+	width: 900px;
+	height: auto;
+	border: 10px solid #000000;
+	border-radius: 10px;
+}
 .articles-wrapper {
 	padding-top: 50px;
 	padding-bottom: 50px;

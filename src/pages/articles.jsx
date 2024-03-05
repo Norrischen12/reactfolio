@@ -41,31 +41,14 @@ const Articles = () => {
 
 					<div className="articles-main-container">
 						<div className="title articles-title">
-							{INFO.articles.title}
+							{INFO.resume.title}
 						</div>
 
-						<div className="subtitle articles-subtitle">
-							{INFO.articles.description}
+						<div className="articles-img-container">
+							<img src="resume.png" alt="resume">
+							</img>
 						</div>
 
-						<div className="articles-container">
-							<div className="articles-wrapper">
-								{myArticles.map((article, index) => (
-									<div
-										className="articles-article"
-										key={(index + 1).toString()}
-									>
-										<Article
-											key={(index + 1).toString()}
-											date={article().date}
-											title={article().title}
-											description={article().description}
-											link={"/article/" + (index + 1)}
-										/>
-									</div>
-								))}
-							</div>
-						</div>
 					</div>
 					<div className="page-footer">
 						<Footer />
